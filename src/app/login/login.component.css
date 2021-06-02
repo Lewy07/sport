@@ -1,0 +1,69 @@
+#loginform {
+    width: 100%;
+    margin-left: 35%;
+    margin-bottom: 12%;
+}
+
+.form-group {
+    width: 100%;
+    height: 120px;
+}
+
+.form-control {
+    width: 50%;
+    height: 50px;
+}
+
+#logButton {
+    margin-left: 12%;
+    font-size: 22px;
+    width: 25%;
+}
+
+input[type="text"], input[type="password"] {
+    font-size: 24px;
+}
+
+label, p {
+    font-size: 20px;
+}
+
+#failedLoginAlert {
+    margin-top: 1%;
+    text-align: center;
+    width: 50%;
+}
+
+#question {
+    text-align: left;
+}
+
+.container {
+    margin-top: 10%;
+    margin-bottom: 13%;
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    padding-top: 100px;
+}
+
+.cta {
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.cta {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+}
+
+.cta:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}

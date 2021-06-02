@@ -1,0 +1,66 @@
+<div>
+  <div >
+    <div id="searchPanel" class="d-flex justify-content-center">
+      <div>
+        <label for="title">Wprowadź tytuł:</label>
+        <input name="title" type="text" class="form-control" placeholder="Tytuł" [(ngModel)]="titleSearch" />
+        <br>
+        <label for="description">Wprowadź opis:</label>
+        <input name="description" type="text" class="form-control" placeholder="Opis" [(ngModel)]="descriptionSearch" />
+      </div>
+
+      <div class="date">
+        <label for="tags">Data dodania od:</label>
+        <br>
+        <input type="datetime-local" [(ngModel)]="dateFromSearch">
+        <br>
+        <label id="secondLabel" for="tags">Data dodania do:</label>
+        <br>
+        <input type="datetime-local" [(ngModel)]="dateToSearch">
+      </div>
+      <div id="tag" class="form-group">
+        <label for="tags">Typ:</label>
+        <select type="tags" class="form-control" name="tagToSearch" [(ngModel)]="tagToSearch">
+          <option value="Ciekawostka">Ciekawostka</option>
+          <option value="Informacja">Informacja</option>
+          <option value="Mem">Mem</option>
+          <option value="Piłkarz">Piłkarz</option>
+          <option value="Trener">Trener</option>
+          <option value="Drużyna">Drużyna</option>
+        </select>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="search()">
+            Szukaj
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <div id="listWithPhotos" class="d-flex justify-content-center">
+      <ul class="list-group">
+        <li class="list-group-item"
+          *ngFor="let image of images | paginate : { itemsPerPage: 5, currentPage: p }; let i = index">
+          <h3>{{ image.title }}</h3>   
+          <a id="list" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-400 justify-content-between">
+              <small class="mb-1">{{ image.tags }}</small>
+              <h5 class="text-muted">{{ image.author }}</h5>
+              <small class="text-muted">{{ image.date }}</small>
+            </div>
+            <img [src]="image.picByte" width="700px" class="img-fluid">
+            <p class="description" id="description">{{ image.description }}</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="pagination" class="d-flex justify-content-center">
+      <pagination-controls previousLabel="Poprzednia" nextLabel="Następna" responsive="true" (pageChange)="p = $event">
+      </pagination-controls>
+    </div>
+
+  </div>
+</div>

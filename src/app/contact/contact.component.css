@@ -1,0 +1,30 @@
+.leftside {
+    align-items: center;
+    text-align: center;
+    width: 45%;
+    height: 500px;
+    float: left;
+    background-color: #24252A;
+}
+
+.rightside {
+    margin-right: 10%;
+    width: 45%;
+    height: 500px;
+    float: left;
+    background-color: #24252A;
+}
+
+h1 { 
+    font-size:calc(12px + 6vw);
+    color: white;
+    font-family: Garamond, serif;
+    margin-top: 20%;
+}
+
+p {
+    color: white;
+    margin-top: 20%;
+    font-size:calc(12px + 0.5vw);
+    margin-right: 5%;
+}

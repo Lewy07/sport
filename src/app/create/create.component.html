@@ -1,0 +1,76 @@
+<div *ngIf="info.token" id="addpost">
+    <div class="container row">
+        <div class="col-md-12">
+            <h1>Dodaj post</h1>
+        </div>
+    </div>
+    <hr />
+    <form id="addForm" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="form-group">
+            <label for="title">Tytuł:</label>
+            <input type="text" class="form-control" name="title" [(ngModel)]="form.title" #title="ngModel" required maxlength="49"/>
+            <div *ngIf="f.submitted && title.invalid">
+                <div *ngIf="title.errors.required">
+                    <p>Tytuł jest wymagany</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container row">
+            <div class="col-md-6" id="file">
+                <img class="preview" [src]="url" height="150vh"> <br />
+                <input class="filePick" type="file" (change)="onFileChanged($event)">
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="description">Opis:</label>
+            <input type="description" class="form-control" name="description" [(ngModel)]="form.description"
+                #description="ngModel" required  maxlength="299"/>
+            <div *ngIf="f.submitted && description.invalid">
+                <div *ngIf="description.errors.required">
+                    <p>Opis jest wymagany</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="firstTag">Rodzaj:</label>
+            <select type="firstTag" class="form-control" name="firstTag" [(ngModel)]="form.firstTag" #firstTag="ngModel"
+                required>
+                <option value="Ciekawostka">Ciekawostka</option>
+                <option value="Informacja">Informacja</option>
+                <option value="Mem">Mem</option>
+            </select>
+            <div *ngIf="f.submitted && firstTag.invalid">
+                <div *ngIf="firstTag.errors.required">
+                    <p>Tag jest wymagany</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="secondTag">Kogo dotyczy:</label>
+            <select type="secondTag" class="form-control" name="secondTag" [(ngModel)]="form.secondTag"
+                #secondTag="ngModel" required>
+                <option value="Piłkarz">Piłkarz</option>
+                <option value="Trener">Trener</option>
+                <option value="Drużyna">Drużyna</option>
+            </select>
+            <div *ngIf="f.submitted && secondTag.invalid">
+                <div *ngIf="secondTag.errors.required">
+                    <p>Tag jest wymagany</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <button class="btn btn-primary">Dodaj</button>
+            <hr />
+            <div *ngIf=message id="addInfo" class="alert alert-info">
+                <p>{{message}}</p>
+            </div>
+        </div>
+    </form>
+</div>

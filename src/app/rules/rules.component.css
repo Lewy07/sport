@@ -1,0 +1,36 @@
+#leftside {
+    align-items: center;
+    text-align: center;
+    width: 45%;
+    height: 500px;
+    float: left;
+    background-color: #24252A;
+}
+
+.rightside {
+    margin-right: 10%;
+    width: 45%;
+    height: 500px;
+    float: left;
+    background-color: #24252A;
+}
+
+h1 { 
+    font-size:calc(12px + 6vw);
+    color: white;
+    font-family: Garamond, serif;
+    margin-top: 20%;
+}
+
+p {
+    margin-top: 5%;
+    color: white;
+    font-size:calc(12px + 0.5vw);
+    margin-right: 5%;
+}
+
+li
+{
+    color: white;
+    font-size:calc(12px + 0.3vw);
+}

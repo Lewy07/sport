@@ -1,0 +1,66 @@
+label {
+    font-size: 14px;
+}
+
+.form-control {
+    margin-bottom: 5px;
+} 
+
+#searchPanel {
+    margin-top: 1%;
+}
+
+.date {
+    margin-left: 1%;
+}
+
+input[type="datetime-local"]
+{
+    font-size:17.5px;
+    margin-bottom: 8%;
+}
+
+input[type="text"], select, button
+{
+    font-size:14px;
+}
+
+button {
+    margin-top: 36%;
+    width: 100%;
+}
+
+#tag {
+    margin-left: 1%;
+}
+
+ul, li {
+    border: 0px;
+}
+
+li {
+    margin-top: 20%;
+    max-width: 720px;
+}
+
+#pagination {
+    font-size: 18px;
+    margin-top: 10%;
+}
+
+p {
+    font-size: medium;
+}
+
+h3 {
+    font-size: 20px;
+    width: 100%;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+small {
+    font-size: 12px;
+}

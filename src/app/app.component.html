@@ -1,0 +1,41 @@
+<header>
+  <a class="logo" href="/"><img src="assets/dodge-sport-2.svg" alt="logo"></a>
+
+  <nav>
+    <ul class="nav__links">
+      <li><a href="#">Główna</a></li>
+      <li><a routerLink="information">Informacje</a></li>
+    </ul>
+  </nav>
+  <div *ngIf="authority" >
+    <a routerLink="create" class="cta">Dodaj</a>
+    <a>&nbsp;</a>
+    <a>&nbsp;</a>
+    <a class="cta" (click)="logout()">Wyloguj</a>
+  </div>
+  <a *ngIf="!authority" class="cta" routerLink="auth/login">Zaloguj</a>
+  <button class="menu cta" (click)="showFunc()">Menu</button>
+</header>
+<div class="overlay" [ngStyle]="{'width': size}">
+  <button class="close" (click)="closeFunc()">&times;</button>
+  <div class="overlay__content">
+    <a href="#">Główna</a>
+    <a routerLink="information">Informacje</a>
+    <a *ngIf="authority" class="cta" (click)="logout()">Wyloguj</a>
+    <a *ngIf="!authority" class="cta" routerLink="auth/login">Zaloguj</a>
+  </div>
+</div>
+
+<div [ngStyle]="{'visibility': test,'width': widthRouting}">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="footer-basic">
+  <footer>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Strona główna</a></li>
+          <li class="list-inline-item"><a routerLink="information">Informacje</a></li>
+      </ul>
+      <p class="copyright">Company Bartłomiej Lewandowski © 2021</p>
+  </footer>
+</div>
